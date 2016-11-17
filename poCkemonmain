@@ -1,0 +1,57 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(){
+    
+    char inicio, posicao, nomedojogador[100], c;
+    celula teladojogo[LINHA][COLUNA];
+    int i, j;
+    FILE *f;
+    printf("\t\tBem-Vindo ao PoCkemon!");
+    printf("\n\nO que deseja fazer?\n\n<i> - Iniciar o Jogo.\n<r> - Recordes\n<s> - Sair do Jogo.\n\n");
+    scanf("%c", &inicio);
+    fflush(stdin);
+    system("cls");
+    switch(inicio){
+        case 'i':
+            printf("Digite seu nome:\n");
+            gets(nomedojogador);
+            fflush(stdin);
+            system("cls");
+            printf("O que deseja?\n\n<1> - Escolher posicoes dos PoCkemons.\n<2> - Definir posicoes aleatoriamente.\n\n");
+            scanf("%c",&posicao);
+            fflush(stdin);
+            system("cls");
+            if(posicao==1){
+                for(i=0;i<LINHA;i++){
+                    for(j=i+1;j<COLUNA;j++){
+                        
+                    }
+                }
+            }
+            if(posicao==2){
+                
+            }
+            break;
+        case 'r':
+                f = fopen("recordes.txt","r");
+                    if(f==NULL){
+                        perror("recordes.txt");
+                        return f;
+                        }
+                    while(fscanf(f,"%c",&c)!=EOF){
+                    printf("%c", c);  
+                    }
+                        printf("\n\n");
+                     fclose(f);
+                     system("PAUSE");
+        case 's':
+            printf("Saindo do jogo...\n");
+            break;
+        default:
+            printf("Operacao invalida!\n");
+    }
+    
+system("PAUSE");
+return 0;
+}
